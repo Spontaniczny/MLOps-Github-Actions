@@ -1,0 +1,5 @@
+﻿2026-01-06T14:39:56.8517448Z ##[group]Run echo "Hello world!"
+2026-01-06T14:39:56.8518289Z [36;1mecho "Hello world!"[0m
+2026-01-06T14:39:56.8940644Z shell: /usr/bin/bash -e {0}
+2026-01-06T14:39:56.8942074Z ##[endgroup]
+2026-01-06T14:39:56.9170098Z Hello world!
