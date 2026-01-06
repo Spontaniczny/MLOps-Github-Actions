@@ -1,0 +1,41 @@
+[project]
+name = "homework"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "boto3>=1.42.9",
+    "clean-text>=0.6.0",
+#    "fastapi>=0.119.0",
+#    "httpx>=0.28.1",
+#    "joblib>=1.5.2",
+#    "pre-commit>=4.3.0",
+#    "boto3>=1.42.9",
+#    "boto3-stubs~=1.42.9",
+#    "clean-text>=0.6.0",
+#    "sentence-transformers>=5.1.1",
+#    "torch>=2.8.0",
+#    "transformers>=4.57.0",
+#    "uvicorn>=0.37.0",
+]
+
+[dependency-groups]
+integration = [
+    "pytest",
+    "pre-commit>=4.3.0",
+    "httpx>=0.28.1",
+    "boto3-stubs~=1.42.9",
+    {include-group = "inference"},
+    {include-group = "deployment"},
+]
+deployment = [
+    "fastapi>=0.119.0",
+    "uvicorn>=0.37.0",
+]
+inference = [
+    "joblib>=1.5.2",
+    "onnxruntime>=1.17.0",
+    "tokenizers>=0.15.0",
+]
+
