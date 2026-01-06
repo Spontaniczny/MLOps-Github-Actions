@@ -1,0 +1,1 @@
+Github Actions przestało działać, ale pobrane logi pokazują, że wykonało się poprawnie. Man, mam nadzieję, że dalej będzie już działać XD
