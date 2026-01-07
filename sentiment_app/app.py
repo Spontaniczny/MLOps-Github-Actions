@@ -6,6 +6,7 @@ import numpy as np
 from fastapi import FastAPI
 from starlette.responses import JSONResponse
 from pydantic import BaseModel
+from mangum import Mangum
 
 
 class PredictRequest(BaseModel):
@@ -17,6 +18,7 @@ class PredictResponse(BaseModel):
 
 
 app = FastAPI()
+handler = Mangum(app)
 tokenizer = Tokenizer.from_file(Settings.onnx_tokenizer_path)
 ort_session = ort.InferenceSession(Settings.onnx_embedding_model_path)
 ort_classifier = ort.InferenceSession(Settings.onnx_classifier_path)
