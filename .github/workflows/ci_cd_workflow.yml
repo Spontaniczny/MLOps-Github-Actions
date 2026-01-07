@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: uv sync --group integration
 
+      - name: Install pre-commit
+        run: pre-commit install
+
       - name: Run ruff checks
         run: pre-commit run
 
