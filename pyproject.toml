@@ -9,6 +9,7 @@ dependencies = [
     "clean-text>=0.6.0",
     "fastapi>=0.119.0",
     "uvicorn>=0.37.0",
+    "onnxruntime>=1.17.0",
     #    "fastapi>=0.119.0",
     #    "httpx>=0.28.1",
     #    "joblib>=1.5.2",
@@ -38,7 +39,6 @@ deployment = [
 ]
 inference = [
     "joblib>=1.5.2",
-    "onnxruntime>=1.17.0",
     "skl2onnx>=1.19.1",
     "tokenizers>=0.15.0",
 ]
