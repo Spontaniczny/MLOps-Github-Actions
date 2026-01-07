@@ -1,29 +1,31 @@
 import os
 import boto3
-from settings import Settings
 
-s3 = boto3.client('s3')
-
-BUCKET_NAME = Settings.s3_bucket_name
-S3_OBJECT_KEY = Settings.s3_model_dir
-LOCAL_DIR = Settings.local_model_dir
+from src.scripts.settings import Settings
 
 
-response = s3.list_objects_v2(
-    Bucket=BUCKET_NAME,
-    Prefix=S3_OBJECT_KEY
-)
+def download_artifacts(settings: Settings):
+    s3 = boto3.client('s3')
 
-for obj in response.get("Contents", []):
-    key = obj["Key"]
+    BUCKET_NAME = settings.s3_bucket_name
+    S3_OBJECT_KEY = settings.s3_model_dir
+    LOCAL_DIR = settings.local_model_dir
 
-    if key.endswith("/"):
-        continue
-
-    local_path = os.path.join(
-        LOCAL_DIR,
-        os.path.relpath(key, S3_OBJECT_KEY)
+    response = s3.list_objects_v2(
+        Bucket=BUCKET_NAME,
+        Prefix=S3_OBJECT_KEY
     )
 
-    os.makedirs(os.path.dirname(local_path), exist_ok=True)
-    s3.download_file(BUCKET_NAME, key, local_path)
+    for obj in response.get("Contents", []):
+        key = obj["Key"]
+
+        if key.endswith("/"):
+            continue
+
+        local_path = os.path.join(
+            LOCAL_DIR,
+            os.path.relpath(key, S3_OBJECT_KEY)
+        )
+
+        os.makedirs(os.path.dirname(local_path), exist_ok=True)
+        s3.download_file(BUCKET_NAME, key, local_path)

@@ -1,7 +1,8 @@
 import os
-from settings import Settings
 import torch
 from transformers import AutoTokenizer, AutoModel
+
+from src.scripts.settings import Settings
 
 
 class SentenceEmbeddingModel(torch.nn.Module):
@@ -61,4 +62,4 @@ def export_model_to_onnx(settings: Settings):
     print(f"ONNX model exported to {onnx_path}")
     return onnx_path
 
-export_model_to_onnx(Settings)
+
