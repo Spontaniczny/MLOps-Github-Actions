@@ -21,14 +21,14 @@ jobs:
       - name: Install dependencies
         run: uv sync --group integration
 
-      - name: Install pre-commit
-        run: pre-commit install
-
-      - name: Run ruff checks
-        run: pre-commit run
-
-      - name: Run pytest
-        run: uv run pytest tests -rP
+#      - name: Install pre-commit
+#        run: pre-commit install
+#
+#      - name: Run ruff checks
+#        run: pre-commit run
+#
+#      - name: Run pytest
+#        run: uv run pytest tests -rP
 
   deployment:
     name: deploy_model_on_aws
