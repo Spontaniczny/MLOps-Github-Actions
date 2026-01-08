@@ -6,6 +6,9 @@ env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: sentiment-app-onnx
   S3_BUCKET: mlops-lab11-models-kaspersky
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
 
 jobs:
   integration:
@@ -21,6 +24,7 @@ jobs:
       - name: Install dependencies
         run: uv sync --group integration
 
+# no more siła for making pre-commit exist JJNMSDTK
 #      - name: Install pre-commit
 #        run: pre-commit install
 #
