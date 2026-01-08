@@ -36,6 +36,9 @@ integration = [
 ]
 deployment = [
     "uvicorn>=0.37.0",
+    "torch>=2.8.0",
+    "transformers>=4.57.0",
+    {include-group = "inference"},
 ]
 inference = [
     "joblib>=1.5.2",

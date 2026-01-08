@@ -335,28 +335,37 @@ name = "homework"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "awslambdaric" },
     { name = "boto3" },
     { name = "clean-text" },
     { name = "fastapi" },
-    { name = "mangum" },
     { name = "onnxruntime" },
     { name = "uvicorn" },
 ]
 
 [package.dev-dependencies]
 deployment = [
+    { name = "awslambdaric" },
+    { name = "joblib" },
+    { name = "mangum" },
+    { name = "skl2onnx" },
+    { name = "tokenizers" },
+    { name = "torch" },
+    { name = "transformers" },
     { name = "uvicorn" },
 ]
 inference = [
+    { name = "awslambdaric" },
     { name = "joblib" },
+    { name = "mangum" },
     { name = "skl2onnx" },
     { name = "tokenizers" },
 ]
 integration = [
+    { name = "awslambdaric" },
     { name = "boto3-stubs" },
     { name = "httpx" },
     { name = "joblib" },
+    { name = "mangum" },
     { name = "pre-commit" },
     { name = "pytest" },
     { name = "skl2onnx" },
@@ -368,26 +377,37 @@ integration = [
 
 [package.metadata]
 requires-dist = [
-    { name = "awslambdaric", specifier = ">=3.1.1" },
     { name = "boto3", specifier = ">=1.42.9" },
     { name = "clean-text", specifier = ">=0.6.0" },
     { name = "fastapi", specifier = ">=0.119.0" },
-    { name = "mangum", specifier = ">=0.20.0" },
     { name = "onnxruntime", specifier = ">=1.17.0" },
     { name = "uvicorn", specifier = ">=0.37.0" },
 ]
 
 [package.metadata.requires-dev]
-deployment = [{ name = "uvicorn", specifier = ">=0.37.0" }]
-inference = [
+deployment = [
+    { name = "awslambdaric", specifier = ">=3.1.1" },
     { name = "joblib", specifier = ">=1.5.2" },
+    { name = "mangum", specifier = ">=0.20.0" },
+    { name = "skl2onnx", specifier = ">=1.19.1" },
+    { name = "tokenizers", specifier = ">=0.15.0" },
+    { name = "torch", specifier = ">=2.8.0" },
+    { name = "transformers", specifier = ">=4.57.0" },
+    { name = "uvicorn", specifier = ">=0.37.0" },
+]
+inference = [
+    { name = "awslambdaric", specifier = ">=3.1.1" },
+    { name = "joblib", specifier = ">=1.5.2" },
+    { name = "mangum", specifier = ">=0.20.0" },
     { name = "skl2onnx", specifier = ">=1.19.1" },
     { name = "tokenizers", specifier = ">=0.15.0" },
 ]
 integration = [
+    { name = "awslambdaric", specifier = ">=3.1.1" },
     { name = "boto3-stubs", specifier = "~=1.42.9" },
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "joblib", specifier = ">=1.5.2" },
+    { name = "mangum", specifier = ">=0.20.0" },
     { name = "pre-commit", specifier = ">=4.3.0" },
     { name = "pytest" },
     { name = "skl2onnx", specifier = ">=1.19.1" },
