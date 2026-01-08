@@ -29,4 +29,4 @@ COPY model_onnx ./model_onnx
 # Run the application
 #CMD ["uvicorn", "sentiment_app.app:app", "--host", "0.0.0.0", "--port", "8000"]
 ENTRYPOINT ["python", "-m", "awslambdaric"]
-CMD ["app.handler"]
+CMD ["sentiment_app.app.handler"]
